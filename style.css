@@ -1,0 +1,630 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #424242;
+  }
+  
+  /* Header and Navigation */
+  header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 5px solid #1e90ff;
+    background-color: #424242;
+    padding: 0.5em;
+    padding-right: 3em;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 1em;
+    font-size: 2em;
+  }
+  
+  nav ul li a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  main {
+    padding-top: 7em;
+    background-color: #424242;
+  }
+  
+  /* About Me Section */
+  #about {
+    font-size: 2em;
+    background-color: #1e90ff;
+    padding: 1.5em;
+    margin-bottom: 0.05em;
+  }
+  
+  /* Playlist Section Pattern */
+  .playlist-grid-pattern {
+    width: 100%;
+    height: 100%;
+    --u: 5px;
+    --c1: #ffffff;
+    --c2: #000000;
+    --c3: #424242;
+    --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+    background: conic-gradient(from 122deg at 50% 85.15%, var(--c2) 0 58deg, var(--c3) 0 116deg, #fff0 0 100%) var(--gp),
+                conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%) var(--gp),
+                conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%) var(--gp),
+                conic-gradient(from 58deg at 66.87% 50%, var(--c1) 0 64deg, var(--c2) 0 130deg, rgba(254, 0, 0, 0) 0 100%) var(--gp),
+                conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%) var(--gp),
+                conic-gradient(from 172deg at 33.13% 50%, var(--c3) 0 66deg, var(--c1) 0 130deg, #fff0 0 100%) var(--gp),
+                linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%) var(--gp),
+                linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%) var(--gp),
+                conic-gradient(from -58deg at 50.25% 14.85%, var(--c3) 0 58deg, var(--c2) 0 116deg, #fff0 0 100%) var(--gp),
+                conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%) var(--gp),
+                linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
+  }
+  
+  /* My Playlist Section */
+  #playlist {
+    font-size: 2.5em;
+    color: #000000;
+    background-color: #424242;
+    padding: 1em;
+    margin-bottom: 0.0em;
+  }
+  
+  #playlist h2 {
+    display: inline;
+    background-color: #1e90ff;
+    padding: 0.1em;
+    border-radius: 4px;
+  }
+  
+  .playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+    color: #000000;
+  }
+  
+  .playlist-grid article {
+    background-color: #1e90ff;
+    padding: 0em;
+    border-radius: 12px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    max-height: 700px;
+    max-width: 300px;
+  }
+  
+  .playlist-grid h3 {
+    padding: 0.13em;
+    margin: 0;
+    font-size: 1.2em;
+    height: 150px;
+    width: 100%;
+  }
+  
+  .playlist-grid iframe div {
+    width: 100%;
+    height: 550px;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  article {
+    background-color: #1e90ff;
+    padding: 0em;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .player-container {
+    fill: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    height: 550px;
+    width: 100%;
+  }
+  
+  #player01 {
+    grid-area: A;
+    padding: 50px 38px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  #player01 .wrapper {
+    width: 100%;
+  }
+  
+  #player01 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  #player01 .info {
+    padding-top: 14px;
+  }
+  
+  .player {
+    background-color: #000000;
+    padding: 14px;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: #1e90ff;
+    border-width: 0.2em;
+  }
+  
+  .player img {
+    width: 21px;
+    height: 21px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .info {
+    color: #E1E1E6;
+  }
+  
+  .info p {
+    opacity: 0.68;
+    font-size: 19px;
+  }
+  
+  .info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .player h1 {
+    font-size: 27px;
+    color: #E1E1E6;
+    padding-bottom: 7px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  
+  .track {
+    padding-top: 28px;
+    position: relative;
+  }
+  
+  .track::before {
+    content: '';
+    height: 6px;
+    width: 100%;
+    display: block;
+    background: #D9D9D9;
+    opacity: 0.3;
+    border-radius: 10px;
+    position: absolute;
+  }
+  
+  .track::after {
+    content: '';
+    height: 6px;
+    width: 85%;
+    display: block;
+    background: #D9D9D9;
+    border-radius: 10px;
+  }
+  
+  .time {
+    opacity: 0.7;
+    font-size: 14px;
+    color: gainsboro;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 9.6px;
+  }
+  
+  @media (max-width: 670px) {
+    #boxes {
+      display: flex;
+      flex-direction: column;
+      max-width: 270px;
+      margin: auto;
+      height: auto;
+      padding-block: 60px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* About Me Section */
+  #about {
+    font-size: 2em;
+    background-color:#1e90ff;
+    padding: 1.5em;
+    margin-bottom: 0.05em;
+    
+    
+  }
+  
+  /* The pattern for the playlist section was taken from https://uiverse.io/mobinkakei/loud-parrot-63 */
+  
+  .playlist-grid-pattern {
+    width: 100%;
+    height: 100%;
+    /* control ize */
+  }
+  
+  /* My Playlist Section */
+  #playlist {
+    font-size: 2.5em;
+    color: #000000;
+    background-color: #424242;
+    padding: 1em;
+    margin-bottom: 0.0em;
+  }
+  
+  #playlist h2 {
+    display: inline;
+    background-color: #1e90ff;
+    padding: 0.1em;
+    border-radius: 4px;
+  }
+  
+  .playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+    color: #000000;
+  }
+  
+  .playlist-grid article {
+    background-color: #1e90ff;
+    padding: 0em;
+    border-radius: 12px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    max-height: 700px;
+    max-width: 300px;
+  }
+  
+  .playlist-grid h3 {
+    padding: 0.13em;
+    margin: 0;
+    font-size: 1.2em;
+    height: 150px;
+    width: 100%;
+  }
+  
+  .playlist-grid iframe div {
+    width: 100%;
+    height: 550px;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  
+  article {
+    background-color: #1e90ff;
+    padding: 0em;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Contact Section */
+  #contact {
+    font-size: 2em;
+    background-color:#1e90ff;
+    padding: 1em;
+    margin-bottom: 0.05em;
+  }
+  
+  #contact h2{
+  
+    display: inline-flex;
+    background-color: #1e90ff;
+    padding: 0.1em;
+    border-radius: 4px; 
+    
+  }
+  
+  
+  #contact p{
+  
+    display: inline;
+    background-color: #1e8fff;
+    padding: 0.1em;
+    border-radius: 4px; 
+    
+  }
+  
+  /* The pattern for the contact was taken from https://uiverse.io/Juanes200122/light-eagle-27 */
+  
+  .contact {
+    width: 100%;
+    height: 100%;
+    --s: 200px; /* control the size */
+    --c1: #0055aa;
+    --c2: #000000;
+    --c3: #113b66;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+  }
+  
+  
+  
+  
+  .social-buttons {
+    display: flex;
+  }
+  
+  
+  /* The button for the LinkedIN was takenb from https://uiverse.io/mRcOol7/massive-bird-37 */
+  .LinkedinBtn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 1em;
+  }
+  
+  .LinkedinBtn .svgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    letter-spacing: 1px; /* Adjusted letter spacing */
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+  }
+  
+  .LinkedinBtn .BG {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #0077b5;
+    z-index: -1;
+    border-radius: 9px;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  .LinkedinBtn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+  }
+  
+  .LinkedinBtn:hover .BG {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+  }
+  
+  .LinkedinBtn:hover .svgContainer {
+    background-color: rgba(156, 156, 156, 0.466);
+  }
+  
+  
+  
+  
+  /* The button for the GitHub was takenb from https://uiverse.io/vinodjangid07/slimy-impala-17 */
+  .GitBtn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background-color: #1e90ff;
+    overflow: hidden;
+  }
+  
+  .svgIcon {
+    transition-duration: .3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+  }
+  
+  .GitBtn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+  }
+  
+  .GitBtn:hover .text {
+    opacity: 1;
+    transition-duration: .4s;
+  }
+  
+  .GitBtn:hover .svgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Footer */
+  footer {
+    background-color: #424242;
+    color: #1e90ff;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Contact Section */
+  #contact {
+    font-size: 2em;
+    background-color:#1e90ff;
+    padding: 1em;
+    margin-bottom: 0.05em;
+  }
+  
+  #contact h2{
+  
+    display: inline-flex;
+    background-color: #1e90ff;
+    padding: 0.1em;
+    border-radius: 4px; 
+    
+  }
+  
+  
+  #contact p{
+  
+    display: inline;
+    background-color: #1e8fff;
+    padding: 0.1em;
+    border-radius: 4px; 
+    
+  }
+  
+  /* The pattern for the contact was taken from https://uiverse.io/Juanes200122/light-eagle-27 */
+  
+  .contact {
+    width: 100%;
+    height: 100%;
+    --s: 200px; /* control the size */
+    --c1: #0055aa;
+    --c2: #000000;
+    --c3: #113b66;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Footer */
+  footer {
+    background-color: #424242;
+    color: #1e90ff;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    width: 100%;
+  }
+  
+  
